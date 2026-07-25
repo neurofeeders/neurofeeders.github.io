@@ -1,6 +1,6 @@
 ---
 title: New site
-date: 2023-06-09
+date: 2026-07-25
 description: "The new site is now up and running."
 image: images/pyra.jpg
 ---
