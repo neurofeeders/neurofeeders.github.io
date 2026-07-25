@@ -1,0 +1,119 @@
+:root {
+    --font-family-heading: 'Poppins', sans-serif;
+    --font-family-paragraph: Helvetica, sans-serif;
+    --font-family-mono: monospace;
+    --base-color: #151516;
+    --base-offset-color: #eaeaea;
+    --highlight-color: #FFFFE8; //{{ .Site.Params.highlightColor | default "#7b16ff" }};
+    --heading-color: #FFFFE8; 
+    --text-color: #dadee6;
+}
+
+$breakpoints: (
+    'small': 767px,
+    'medium': 992px,
+    'large': 1200px,
+);
+
+@import 'normalize';
+@import 'breakpoints';
+@import 'header';
+@import 'footer';
+@import 'content';
+@import 'intro';
+@import 'summary';
+@import 'author';
+@import 'pagination';
+@import 'main-menu';
+@import 'main-menu-mobile';
+@import 'pygments/github';
+
+html, body {
+box-sizing: border-box;
+}
+
+html {
+    background: var(--highlight-color);
+}
+
+body {
+// background: var(--base-color);
+background: #262626;
+background: linear-gradient(0deg,#090800 0%, #151100 100%);
+
+font-family: var(--font-family-paragraph);
+color: var(--text-color);
+margin: 0;
+padding: 20px;
+overflow-x: hidden;
+@include breakpoint('small') {
+    padding: 50px;
+}
+&.frame {
+    min-height: 100vh;
+    border: 5px solid var(--highlight-color);
+}
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}  
+
+form {
+    border-style: unset;
+    color: var(--text-color);
+}
+
+input {
+    width: 75%;
+    height: 2.5em;
+    border-style: unset;
+    color: var(--text-color);
+}
+
+textarea {
+    width: 75%;
+    resize: none;
+    height: 15em;
+    color: var(--text-color);
+
+    border-width: 2px;
+    border-style: unset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+.form-input {
+    margin-top: 5px;
+    background-color: var(--base-color);
+}
+
+.form-button {
+    font-size:14px;
+    background-color: var(--base-color);
+    border-color: var(--highlight-color);
+    color:var(--text-color);
+    font-weight:bold;
+    padding:10px 35px;
+    margin: 5px 0 0 0;
+    border-style: unset;
+}
+
+button {
+    font-size:14px;
+    background-color: var(--base-color);
+    border-color: var(--highlight-color);
+    color:var(--text-color);
+    font-weight:bold;
+    padding:10px 35px;
+    margin: 5px 0 0 0;
+}
+
+.social-icon {
+    filter: invert(100%)
+}
+
+hr {
+    border-color: var(--heading-color);
+}
